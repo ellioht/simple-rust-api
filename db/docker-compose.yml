@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: db
+    environment:
+      POSTGRES_USER: rust_api
+      POSTGRES_PASSWORD: rust_api_pwd
+      POSTGRES_DB: rust_api
+    ports:
+      - "5434:5432"
+    volumes:
+      - rust_api_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  rust_api_postgres_data:
